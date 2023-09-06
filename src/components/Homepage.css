@@ -1,0 +1,27 @@
+
+
+.navigateTitles{
+    position: relative;
+    display: flex;
+    justify-content:start;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 20px;
+    color: #707070;
+    font-weight:500;
+}
+
+.titleNames{
+    display: flex;
+    padding: 2vh 6vh;
+    display: flex;
+    gap: 9vh;
+}
+
+
+
+
+
+/* Carousel */
+
+

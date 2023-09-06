@@ -1,0 +1,14 @@
+// store.js
+
+import { configureStore } from '@reduxjs/toolkit';
+import thunk from 'redux-thunk';
+import rootReducer from '../src/reducers/index'; 
+const store = configureStore({
+  
+  reducer: rootReducer,
+  middleware: [thunk],
+  devTools: process.env.NODE_ENV !== 'production', // Enable devtools only in development
+});
+
+export default store;
+  

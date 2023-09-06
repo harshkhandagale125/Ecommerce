@@ -1,0 +1,227 @@
+/* Container */
+
+.brand-add-container {
+
+  display: flex;
+
+  padding: 30px 50px;
+
+  margin: 30px auto;
+
+  width: 80%;
+
+  height: 100%;
+
+  background: #FFFFFF;
+
+  border: 1px solid #E1E1E1;
+
+  border-radius: 16px;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+ 
+
+/* Form Section */
+
+.brand-add-form {
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+
+  padding-right: 20px;
+
+}
+
+ 
+
+/* Input Group */
+
+.brand-input-group {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+ 
+
+/* Label */
+
+.brand-label {
+
+  font-weight: bold;
+
+  margin-bottom: 5px;
+
+}
+
+ 
+
+/* Input Fields */
+
+.brand-input,
+
+.brand-textarea,
+
+.brand-select {
+
+  padding: 10px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 5px;
+
+  outline: none;
+
+  width: 100%;
+
+}
+
+ 
+
+/* Textarea */
+
+.brand-textarea {
+
+  height: 120px;
+
+}
+
+ 
+
+/* Submit Button */
+
+.brand-button {
+
+  background-color: #FF4F04;
+
+  color: white;
+
+  border: none;
+
+  padding: 10px 20px;
+
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  width: 150px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+}
+
+ 
+
+/* Button Hover */
+
+.brand-button:hover {
+
+  background-color: #D64000;
+
+}
+
+ 
+
+/* Image Preview Section */
+
+/* .brand-image-preview {
+
+  margin-top: 10px;
+
+  display: flex;
+
+} */
+
+ 
+
+/* Right Container */
+
+.brand-right-container {
+
+  margin-left: 50px;
+
+}
+
+ 
+
+/* Image Buttons Section */
+
+.brand-image-buttons {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 20px;
+
+  margin-top: 10px;
+
+}
+
+ 
+
+/* Form Container */
+
+.brand-form-container {
+
+  display: flex;
+
+  padding: 14px 23px;
+
+ 
+
+  margin: 30px auto;
+
+ 
+
+  top: 194px;
+
+ 
+
+  left: 90px;
+
+ 
+
+  width: 80%;
+
+ 
+
+  height: 100%;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  background-color: #ffffff;
+
+  padding: 40px;
+
+  border: 1px solid #e1e1e1;
+
+  border-radius: 16px;
+
+  width: 600px;
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+}

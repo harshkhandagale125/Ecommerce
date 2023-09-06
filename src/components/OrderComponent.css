@@ -1,0 +1,85 @@
+/* OrderComponent.css */
+
+ 
+
+.mainOrderContainer {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-top: 10vh;
+
+    margin-bottom: 20vh;
+
+    padding: 20px;
+
+  }
+
+ 
+
+  .error-message {
+
+    color: red;
+
+    font-weight: bold;
+
+  }
+
+ 
+
+  .order-table {
+
+    width: 80%;
+
+    border-collapse: collapse;
+
+  }
+
+ 
+
+  .order-table th,
+
+  .order-table td {
+
+    border: 1px solid #ddd;
+
+    padding: 8px;
+
+    text-align: center;
+
+   
+
+  }
+
+ 
+
+  .order-table th {
+
+    background-color: #f2f2f2;
+
+  }
+
+ 
+
+  .status.reached {
+
+    color: green;
+
+    font-weight: bold;
+
+  }
+
+ 
+
+  .status.transit {
+
+    color: orange;
+
+    font-weight: bold;
+
+  }
+
+ 

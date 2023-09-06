@@ -1,0 +1,56 @@
+/* Sidebar.css */
+
+.sidebar {/* Layout Properties */
+top: 338px;
+left: 80px;
+width: 229px;
+height: auto;
+/* UI Properties */
+background: var(--unnamed-color-ffffff) 0% 0% no-repeat padding-box;
+background: #FFFFFF 0% 0% no-repeat padding-box;
+box-shadow: 0px 0px 24px #00000029;
+border-radius: 8px;
+opacity: 1;
+  }
+  
+  .brand-filter {
+    margin-bottom: 20px;
+  }
+  
+  .brand-filter h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .brand-filter label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .product-page {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .product-list {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  /* Add any additional styles as needed */
+  /* .brand-item {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .brandFilterNames {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; 
+    justify-content: center;
+    flex-direction: column;
+  }
+   */

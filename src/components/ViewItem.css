@@ -1,0 +1,260 @@
+/* ItemList.css
+
+ 
+
+.item-container {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  padding: 20px;
+
+}
+
+ 
+
+.item-details {
+
+  display: flex;
+
+  align-items: center;
+
+}
+
+ 
+
+.item-image {
+
+  max-width: 30%;
+
+  margin-right: 40px;
+
+}
+
+ 
+
+.item-name {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+}
+
+ 
+
+.item-price {
+
+  font-size: 18px;
+
+  color: #333;
+
+}
+
+ 
+
+.add-to-cart,
+
+.buy-now {
+
+  padding: 4px 3px;
+
+  font-size: 16px;
+
+  background-color: #ff790b;
+
+  color: #fff;
+
+  border: none;
+
+  cursor: pointer;
+
+  margin-right: 10px;
+
+}
+
+ 
+
+.add-to-cart:hover,
+
+.buy-now:hover {
+
+  background-color: #FF4F04;
+
+}
+
+ 
+
+.item-specs {
+
+  font-size: 14px;
+
+  color: #666;
+
+}
+
+ 
+
+.buttons{
+
+  display: flex;
+
+} */
+
+ 
+
+ 
+
+/* ItemList.css */
+
+.custom-item-details{
+
+  border: 1px solid black;
+
+  display: flex;
+
+}
+
+.custom-item-container {
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+ 
+
+  height: 100vh; /* This will make the container take the full height of the viewport */
+
+}
+
+ 
+
+.custom-item-details {
+
+  background-color: #f5f5f5;
+
+  border: 1px solid #ddd;
+
+  padding: 20px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  text-align: center;
+
+ 
+
+}
+
+ 
+
+.custom-item-image {
+
+  max-width: 40%;
+
+  height: auto;
+
+  margin-bottom: 20px;
+
+  margin-top: 20px;
+
+  margin-left: 20px;
+
+}
+
+ .ItemDesc{
+  margin-top: 5vh;
+  margin-left: 8vh;
+ }
+
+.custom-item-name {
+
+  font-size: 24px;
+
+  font-weight: bold;
+
+  margin-bottom: 10px;
+
+  margin-top: 20px;
+
+}
+
+ 
+
+.custom-item-price {
+
+  font-size: 18px;
+
+  color: #04264a; /* Change the color to your preference */
+
+  margin-bottom: 10px;
+
+  margin-top: 20px;
+
+}
+
+ 
+
+.custom-item-specs {
+
+  font-size: 16px;
+
+  margin-bottom: 20px;
+
+  margin-top: 20px;
+
+}
+
+ 
+
+ 
+
+.custom-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+
+}
+
+ 
+
+.custom-add-to-cart,
+
+.custom-buy-now {
+
+  padding: 10px 20px;
+
+  font-size: 11px;
+
+  background-color: #e34603; /* Change the color to your preference */
+
+  color: white;
+
+  border: none;
+
+  border-radius: 5px;
+
+  margin: 0 10px;
+
+  cursor: pointer;
+
+}
+
+ 
+
+.custom-add-to-cart:hover,
+
+.custom-buy-now:hover {
+
+  background-color: #D64000; /* Change the color to your preference */
+
+
+}

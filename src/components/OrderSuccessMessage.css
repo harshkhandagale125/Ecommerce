@@ -1,0 +1,163 @@
+
+.animation-ctn{
+    text-align:center;
+    margin-top:5em;
+  }
+  
+      @-webkit-keyframes checkmark {
+      0% {
+          stroke-dashoffset: 100px
+      }
+  
+      100% {
+          stroke-dashoffset: 200px
+      }
+  }
+  
+  @-ms-keyframes checkmark {
+      0% {
+          stroke-dashoffset: 100px
+      }
+  
+      100% {
+          stroke-dashoffset: 200px
+      }
+  }
+  
+  @keyframes checkmark {
+      0% {
+          stroke-dashoffset: 100px
+      }
+  
+      100% {
+          stroke-dashoffset: 0px
+      }
+  }
+  
+  @-webkit-keyframes checkmark-circle {
+      0% {
+          stroke-dashoffset: 480px
+     
+      }
+  
+      100% {
+          stroke-dashoffset: 960px;
+        
+      }
+  }
+  
+  @-ms-keyframes checkmark-circle {
+      0% {
+          stroke-dashoffset: 240px
+      }
+  
+      100% {
+          stroke-dashoffset: 480px
+      }
+  }
+  
+  @keyframes checkmark-circle {
+      0% {
+          stroke-dashoffset: 480px 
+      }
+  
+      100% {
+          stroke-dashoffset: 960px
+      }
+  }
+  
+  @keyframes colored-circle { 
+      0% {
+          opacity:0
+      }
+  
+      100% {
+          opacity:100
+      }
+  }
+  
+  /* other styles */
+  /* .svg svg {
+      display: none
+  }
+   */
+  .inlinesvg .svg svg {
+      display: inline
+  }
+  
+  /* .svg img {
+      display: none
+  } */
+  
+  .icon--order-success svg polyline {
+      -webkit-animation: checkmark 0.25s ease-in-out 0.7s backwards;
+      animation: checkmark 0.25s ease-in-out 0.7s backwards
+  }
+  
+  .icon--order-success svg circle {
+      -webkit-animation: checkmark-circle 0.6s ease-in-out backwards;
+      animation: checkmark-circle 0.6s ease-in-out backwards;
+  }
+  .icon--order-success svg circle#colored {
+      -webkit-animation: colored-circle 0.6s ease-in-out 0.7s backwards;
+      animation: colored-circle 0.6s ease-in-out 0.7s backwards;
+  } 
+
+
+
+
+
+
+  .animate-h3 {
+
+  /* Define animation for opacity change */
+  animation-name: fadeIn;
+  animation-duration: 1s; /* Animation duration */
+  animation-delay: 0.8s; /* Delay before the animation starts */
+  animation-fill-mode: forwards; /* Keep the last keyframe values after animation */
+
+  /* Define animation for moving the element upwards */
+  transform: translateY(30px);
+  animation-name: slideUp;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+
+/* Define keyframes for fadeIn animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Define keyframes for slideUp animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+.SuccessContainer{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.order-success-message{
+    display: flex;
+    margin-bottom: 20vh;
+    margin-left: 45%;
+   
+   
+   
+}

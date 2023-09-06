@@ -1,0 +1,24 @@
+.Image1{
+  background: transparent url('Group 20642.png') 0% 0% no-repeat padding-box;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+}
+
+.button {
+  background: #ff4f04;
+  border: 1px solid #ff4f04;
+  display: flex;
+  justify-content: center;
+  text-align:center;
+  color: #fff;
+  
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
