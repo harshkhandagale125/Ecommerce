@@ -20,7 +20,7 @@ function Login() {
       localStorage.setItem("token",token)
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-      navigate("/admin-dashboard");
+      navigate("/Homepage");
     } catch (error) {
       alert("Login failed");
       console.log("Login failed:", error);
