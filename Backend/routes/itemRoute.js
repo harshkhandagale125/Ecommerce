@@ -48,6 +48,9 @@ router.get('/getItemWithCategory',ItemController.getItemWithCategory);
 
 router.get('/getItemById/:itemId', ItemController.getProductById);
 
-router.get('/MobLap' ,ItemController.getItemWithCategory1)
+router.get('/getItemMobile' ,ItemController.getItemWithCategorymobile)
+
+
+router.get('/getItemLaptop' ,ItemController.getItemWithCategorylaptop)
 
 module.exports = router;

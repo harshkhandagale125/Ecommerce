@@ -69,7 +69,16 @@
 
 }
 
+.added-in-cart-button{
+  background-color: #FF4F04;
+  border:none;
 
+  color: white;
+  border-radius: 6px;
+ 
+  font-size: 14px;
+
+}
 .button-container{
     display: flex;
     /* align-items: center; */

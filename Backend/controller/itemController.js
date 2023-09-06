@@ -149,24 +149,22 @@ const deleteItem = async (req, res) => {
   }
 };
 
-const getItemWithCategory1 = async (req, res) => {
+const getItemWithCategorymobile = async (req, res) => {
   try {
-    const idsList = await CategoryModel.find({});
-    // Mobiles
-    console.log(idsList);
-    let mobileId;
-    let laptopId;
-    for (let i = 0; i < idsList.length; i++) {
-      if (idsList[0].category_name == "Mobile") {
-        mobileId = idsList[0]._id;
-        laptopId = idsList[1]._id;
-      } else {
-        mobileId = idsList[1]._id;
-        laptopId = idsList[0]._id;
-      }
-    }
-    const brandIdsForMobile = await BrandModel.find({ categoryid: mobileId });
+    // Find the category with the name "Smartphone"
+    const smartphoneCategory = await CategoryModel.findOne({ category_name: "Smartphone" });
 
+    if (!smartphoneCategory) {
+      // If the smartphone category doesn't exist, return a 404 response
+      return res.status(404).json({
+        msg: "Smartphone category not found!",
+      });
+    }
+
+    // Fetch brand IDs for smartphone category
+    const brandIdsForMobile = await BrandModel.find({ categoryid: smartphoneCategory._id });
+
+    // Fetch smartphone categories
     const mobileCategories = await ItemModel.find(
       { BrandId: { $in: brandIdsForMobile } },
       {
@@ -180,9 +178,45 @@ const getItemWithCategory1 = async (req, res) => {
       select: { Name: 1 },
     });
 
-    // LAptops
-    const brandIdsForLaptop = await BrandModel.find({ categoryid: laptopId });
+    if (mobileCategories.length) {
+      res.status(200).json({
+        msg: "Success",
+        data: {
+          Mobilelength: mobileCategories.length,
+          Mobile: mobileCategories,
+        },
+      });
+    } else {
+      res.status(404).json({
+        msg: "No smartphone categories found!",
+      });
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
 
+
+
+const getItemWithCategorylaptop = async (req, res) => {
+  try {
+    // Find the category with the name "Laptop"
+    const laptopCategory = await CategoryModel.findOne({ category_name: "Laptop" });
+
+    if (!laptopCategory) {
+      // If the laptop category doesn't exist, return a 404 response
+      return res.status(404).json({
+        msg: "Laptop category not found!",
+      });
+    }
+
+    // Fetch brand IDs for laptop category
+    const brandIdsForLaptop = await BrandModel.find({ categoryid: laptopCategory._id });
+
+    // Fetch laptop categories
     const laptopCategories = await ItemModel.find(
       { BrandId: { $in: brandIdsForLaptop } },
       {
@@ -196,19 +230,17 @@ const getItemWithCategory1 = async (req, res) => {
       select: { Name: 1 },
     });
 
-    if (mobileCategories.length || laptopCategories.length) {
+    if (laptopCategories.length) {
       res.status(200).json({
         msg: "Success",
         data: {
-          Mobilelength: mobileCategories.length,
-          Mobile: mobileCategories,
           lapiLength: laptopCategories.length,
           Laptop: laptopCategories,
         },
       });
     } else {
       res.status(404).json({
-        msg: "Data not found!",
+        msg: "No laptop categories found!",
       });
     }
   } catch (err) {
@@ -218,6 +250,15 @@ const getItemWithCategory1 = async (req, res) => {
     });
   }
 };
+
+
+
+
+
+
+
+
+
 
 const getProductById = async (req, res) => {
   try {
@@ -275,5 +316,6 @@ module.exports = {
   getItemWithCategory,
   getFilteredItems,
   getProductById,
-  getItemWithCategory1,
+  getItemWithCategorylaptop,
+  getItemWithCategorymobile,
 };

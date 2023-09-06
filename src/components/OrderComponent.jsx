@@ -139,82 +139,56 @@ const OrderComponent = () => {
 
 
   return (
-
     <div className="mainOrderContainer">
-
       {error && <p className="error-message">Error: {error}</p>}
-
       <table className="order-table">
-
         <thead>
-
           <tr>
-
             <th>Order ID</th>
-
-            <th>Order Date</th>
-
             <th>Item Name</th>
-
             <th>Item Price</th>
-
             <th>Quantity</th>
-
+            <th>Order Date</th>
             <th>Delivered By</th>
-
             <th>Status</th>
-
-            <th>Action</th> {/* New column for delete button */}
-
+            <th>Action</th>
           </tr>
-
         </thead>
-
         <tbody>
-
           {orders.map((order) => (
-
-            <tr key={order._id}>
-
-              <td>#{order._id}</td>
-
-              <td>{formatDate(order.createdAt)}</td>
-
-              <td>{order.products[0].productId.itemName}</td>
-
-              <td>${order.products[0].productId.itemPrice.toFixed(2)}</td>
-
-              <td>{order.products[0].quantity}</td>
-
-              <td>{order.deliveredBy.toISOString().split('T')[0]}</td>
-
-              <td className={`status ${order.status === 'Order Reached' ? 'reached' : 'transit'}`}>
-
-                {order.status}
-
-              </td>
-
-              <td>
-
-                <button onClick={() => handleDeleteOrder(order._id)}>Delete</button>
-
-              </td>
-
-            </tr>
-
+            // Map over all products in the order
+            order.products.map((product, index) => (
+              <tr key={order._id + index}>
+                {index === 0 ? ( // Render order details only for the first row
+                  <>
+                    <td rowSpan={order.products.length}>#{order._id}</td>
+                    <td>{product.productId.itemName}</td>
+                    <td>${product.productId.itemPrice.toFixed(2)}</td>
+                    <td>{product.quantity}</td>
+                    <td rowSpan={order.products.length}>{formatDate(order.createdAt)}</td>
+                    <td rowSpan={order.products.length}>{formatDate(order.deliveredBy)}</td>
+                    <td rowSpan={order.products.length} className={`status ${order.status === 'Order Reached' ? 'reached' : 'transit'}`}>
+                      {order.status}
+                    </td>
+                    <td rowSpan={order.products.length}>
+                      <button onClick={() => handleDeleteOrder(order._id)}>Delete</button>
+                    </td>
+                  </>
+                ) : (
+                  // For subsequent rows, leave the cells empty
+                  <>
+                    <td>{product.productId.itemName}</td>
+                    <td>${product.productId.itemPrice.toFixed(2)}</td>
+                    <td>{product.quantity}</td>
+                  </>
+                )}
+              </tr>
+            ))
           ))}
-
         </tbody>
-
       </table>
-
     </div>
-
   );
-
 };
 
-
-
 export default OrderComponent;
-
