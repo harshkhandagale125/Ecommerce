@@ -38,7 +38,6 @@ const BrandsComponent = () => {
 
       <div className='cardRowBrands'>
         {displayedBrands.map(brand => (
-          <Link key={brand._id} to={`/brand/${brand._id}`} className="category-link">
             <div className="category-card">
               <img
                 src={`http://localhost:3000${brand.imageUrl}`}
@@ -50,7 +49,6 @@ const BrandsComponent = () => {
               />
               <p className="category-name">{brand.Name}</p>
             </div>
-          </Link>
         ))}
       </div>
 

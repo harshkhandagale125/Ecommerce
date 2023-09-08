@@ -29,33 +29,41 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    delete axios.defaults.headers.common["Authorization"];
+    localStorage.removeItem('token');
+    delete axios.defaults.headers.common['Authorization'];
 
-    navigate("/login");
+    navigate('/login');
   };
 
   const login = () => {
-    navigate("/login");
+    navigate('/login');
   }
 
-  const navigationTitles = userRole === 'user' 
-  ? [
-    { title: 'Home', path: '/Homepage' },
-      { title: 'Brands', path: '/products' },
-      { title: 'Smartphones', path: '/products' },
-      { title: 'Laptop', path: '/products' },
-    ]
-  : [
-      { title: 'Home', path: '/Homepage' },
-      { title: 'Brands', path: '/products' },
-      { title: 'Smartphones', path: '/products' },
-      { title: 'Laptop', path: '/products' },
-      { title: 'User Management', path: '/admin-dashboard' },
-      { title: 'Add Category', path: '/addcategory' },
-      { title: 'Add Brands', path: '/addbrand' },
-      { title: 'Add Product', path: '/newItem' },
-    ];
+  // Define navigation titles based on user role and token presence
+  const navigationTitles = token
+    ? userRole === 'admin'
+      ? [
+          { title: 'Home', path: '/Homepage' },
+          { title: 'Brands', path: '/products' },
+          { title: 'Smartphones', path: '/AllSmartphoneComponent' },
+          { title: 'Laptop', path: '/AllLaptopComponent' },
+          { title: 'User Management', path: '/admin-dashboard' },
+          { title: 'Add Category', path: '/addcategory' },
+          { title: 'Add Brands', path: '/addbrand' },
+          { title: 'Add Product', path: '/newItem' },
+        ]
+      : [
+          { title: 'Home', path: '/Homepage' },
+          { title: 'Brands', path: '/products' },
+          { title: 'Smartphones', path: '/AllSmartphoneComponent' },
+          { title: 'Laptop', path: '/AllLaptopComponent' },
+        ]
+    : [
+          { title: 'Home', path: '/Homepage' },
+          { title: 'Brands', path: '/products' },
+          { title: 'Smartphones', path: '/AllSmartphoneComponent' },
+          { title: 'Laptop', path: '/AllLaptopComponent' },
+        ];
 
   return (
     <div>
@@ -77,15 +85,15 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="dropdown-menu">
                 {token && ( // Render the "Logout" option only if token is available
-                  <div onClick={handleLogout} >
-                    <i class="fa-solid fa-right-from-bracket fa-xs"></i>&nbsp;Logout
+                  <div onClick={handleLogout}>
+                    <i className="fa-solid fa-right-from-bracket fa-xs"></i>&nbsp;Logout
                   </div>
                 )}
-               {!token && userRole !== ' ' && ( // Render the "Login" option only if there is no token
-  <div onClick={login}>
-    <i class="fa-solid fa-lock fa-xs"></i>&nbsp;Login
-  </div>
-)}
+                {!token && userRole !== ' ' && ( // Render the "Login" option only if there is no token
+                  <div onClick={login}>
+                    <i className="fa-solid fa-lock fa-xs"></i>&nbsp;Login
+                  </div>
+                )}
               </div>
             )}
           </div>

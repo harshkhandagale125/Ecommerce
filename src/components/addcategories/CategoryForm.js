@@ -11,6 +11,7 @@ const CategoryForm = () => {
 
   const handleAddCategory = async () => {
     try {
+      
       setError(null); // Clear any previous errors
       setSuccessMessage(null); // Clear any previous success messages
 

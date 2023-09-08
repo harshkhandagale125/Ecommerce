@@ -3,10 +3,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import '../components/OrderComponent.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
 const OrderComponent = () => {
+  const navigate = useNavigate(); // Use the navigate function from React Router
 
   const generateRandomDate = (createdAt) => {
 
@@ -101,10 +103,16 @@ const OrderComponent = () => {
 
 
   useEffect(() => {
+    const token = localStorage.getItem('token');
 
-    fetchOrders();
-
-  }, []);
+    if (!token) {
+      // User is not authenticated, redirect to the login page
+      navigate('/login'); // Change '/login' to your actual login route
+    } else {
+      // User is authenticated, fetch orders
+      fetchOrders();
+    }
+  }, [navigate]);
 
 
 

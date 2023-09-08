@@ -21,7 +21,6 @@ const CategoryComponent = () => {
   
       <div className='cardRow'>
         {categories.map(category => (
-          <Link key={category._id} to={`/category/${category._id}`} className="category-link">
             <div className="category-card">
             <img
                 src={`http://localhost:3000${category.category_image}`} // Image URL from the server
@@ -33,7 +32,6 @@ const CategoryComponent = () => {
               />
               <p className="category-name">{category.category_name}</p>
             </div>
-          </Link>
         ))}
       </div>
 

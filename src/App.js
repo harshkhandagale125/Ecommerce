@@ -24,6 +24,8 @@ import AdminDashBoard from "./components/admin-dashboard/admin-dashboard";
 import Homepage from "./components/Homepage";
 import Cart from "./components/Cart";
 import OrdersComponent from "./components/OrderComponent";
+import AllSmartphoneComponent from "./components/AllSmartphoneComponent";
+import AllLaptopComponent from "./components/AllLaptopComponent";
 
 
 
@@ -65,6 +67,11 @@ function App() {
             <Route path="/cart" element={<Layout><Cart /></Layout>} />
             <Route path="/OrderSuccessFull" element={<Layout><OrderSuccessMessage /></Layout>} />
             <Route path="/Orders" element={<Layout><OrdersComponent /></Layout>} />
+            <Route path="/AllSmartphoneComponent" element={<Layout><AllSmartphoneComponent /></Layout>} />
+            <Route path="/AllLaptopComponent" element={<Layout><AllLaptopComponent /></Layout>} />
+
+
+            <Route path="*" element={<Layout> <h3 style={{display:'flex', justifyContent:'center', marginTop:'20vh', marginBottom:'10.9vh'}}> 404 Error: Page Not Found </h3></Layout>} />
 
 
 

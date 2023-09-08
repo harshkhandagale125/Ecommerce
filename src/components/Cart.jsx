@@ -12,24 +12,33 @@ const Cart = () => {
   const [orderStatus, setOrderStatus] = useState(null);
   const [orderMessage, setOrderMessage] = useState("");
   const [showOrderSuccess, setShowOrderSuccess] = useState(false); // State to control the visibility of the success message
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 
   const navigate = useNavigate();
 
   const fetchCartData = async () => {
-    try {
-      
-      const token = localStorage.getItem("token");
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  try {
+    const token = localStorage.getItem("token");
 
-      const response = await axios.get("http://localhost:3000/getCart");
-      const { cartData, totalPrice } = response.data;
-      setCartData(cartData || []);
-      setTotalPrice(totalPrice);
-    } catch (error) {
-      console.error("Error fetching cart data:", error);
+    if (!token) {
+      // Token is not present, show login message and return
+      setOrderStatus("error");
+      setOrderMessage("Please login to access your cart.");
+      return;
     }
-  };
+
+    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+
+    const response = await axios.get("http://localhost:3000/getCart");
+    const { cartData, totalPrice } = response.data;
+    setCartData(cartData || []);
+    setTotalPrice(totalPrice);
+  } catch (error) {
+    console.error("Error fetching cart data:", error);
+  }
+};
+
 
   const handleDeleteItem = async (productId) => {
     console.log("Delete icon clicked for productId:", productId);
@@ -90,9 +99,19 @@ const Cart = () => {
 
   
   useEffect(() => {
-    fetchCartData();
-  }, []);
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+      // Fetch cart data only if the user is logged in
+      fetchCartData();
+    } else {
+      setIsLoggedIn(false);
+      // Redirect to the login page or display a message
+      navigate("/login"); // Redirect to the login page if not logged in
+    }
+  }, [navigate]);
 
+  
   return (
     <div className="mainCartContainer">
       <div className="cart-container">

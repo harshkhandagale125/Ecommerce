@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import '../components/AllSmartphoneComponent.css';
 
 const AllLaptopComponent = () => {
@@ -15,6 +16,8 @@ const AllLaptopComponent = () => {
       .then(response => setLaptops(response.data.data.Laptop))
       .catch(error => console.error('Error fetching laptops:', error));
   }, []);
+
+  const navigate = useNavigate(); // Create a navigate function
 
   const addToCart = (productId) => {
     // Send a POST request to add the product to the cart
@@ -54,7 +57,6 @@ const AllLaptopComponent = () => {
   return (
     <div className="AllsmartphoneContainer">
       <div className="CategoryTag" style={{ marginLeft: '94px' }}>
-        {' '}
         <h3 style={{ fontSize: '26px', fontWeight: 'bold', paddingBottom: '20px' }}>Laptops</h3>
       </div>
 
@@ -86,7 +88,12 @@ const AllLaptopComponent = () => {
                   <button className="buy-now-button" onClick={() => addToCart(laptop._id)}>Add to Cart</button>
                 )}
               </div>
-              <p style={{ marginTop: '21px', fontSize: '13px', marginLeft: '12px', color: '#777171' }}>More Info</p>
+              <p
+                style={{ marginTop: '21px', fontSize: '13px', marginLeft: '12px', color: '#777171', cursor: 'pointer' }}
+                onClick={() => navigate(`/viewItem/${laptop._id}`)} // Navigate to viewItem route with the specific itemId
+              >
+                More Info
+              </p>
             </div>
           </div>
         ))}

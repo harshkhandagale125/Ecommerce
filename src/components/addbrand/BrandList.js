@@ -18,6 +18,7 @@ const BrandTable = () => {
 
   const fetchBrands = async () => {
     try {
+      
       const response = await axios.get('http://localhost:3000/brands');
       setBrands(response.data.data);
     } catch (error) {
