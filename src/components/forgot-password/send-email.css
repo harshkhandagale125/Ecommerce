@@ -1,0 +1,79 @@
+
+.send-email-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: transparent url('Group 20642.png') 0% 0% no-repeat padding-box;
+
+}
+
+.send-email-section {
+  width: 100%;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.send-email-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.send-email-card {
+  background-color: #fff;
+  border: 1px solid #ff4f04;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.send-email-card-body {
+  text-align: center;
+}
+
+.send-email-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.send-email-form {
+  margin-top: 1rem;
+}
+
+.send-email-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.send-email-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ff4f04;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.send-email-button {
+  background: #ff4f04;
+  border: 1px solid #ff4f04;
+  color: #fff;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.send-email-message {
+  margin-top: 1rem;
+  color: #ff4f04;
+}
+
+.send-email-otp-popup {
+  background-color: #fff;
+  border: 1px solid #ff4f04;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+}
