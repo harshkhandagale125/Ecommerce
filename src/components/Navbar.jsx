@@ -48,8 +48,8 @@ const Navbar = () => {
           { title: 'Smartphones', path: '/AllSmartphoneComponent' },
           { title: 'Laptop', path: '/AllLaptopComponent' },
           { title: 'User Management', path: '/admin-dashboard' },
-          { title: 'Add Category', path: '/addcategory' },
-          { title: 'Add Brands', path: '/addbrand' },
+          { title: 'List Category', path: '/categorylist' },
+          { title: 'List Brand', path: '/brandlist' },
           { title: 'Add Product', path: '/newItem' },
         ]
       : [

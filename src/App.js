@@ -14,7 +14,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import AdminDashBoard from "./components/admin-dashboard/admin-dashboard";
-
+import SendEmailVerification from "./components/forgot-password/send-email";
+import ForgotPassword from "./components/forgot-password/forgot-password";
 
 
 
@@ -24,8 +25,6 @@ import AdminDashBoard from "./components/admin-dashboard/admin-dashboard";
 import Homepage from "./components/Homepage";
 import Cart from "./components/Cart";
 import OrdersComponent from "./components/OrderComponent";
-import AllSmartphoneComponent from "./components/AllSmartphoneComponent";
-import AllLaptopComponent from "./components/AllLaptopComponent";
 
 
 
@@ -60,6 +59,9 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/admin-dashboard" element={<Layout><AdminDashBoard /></Layout>} />
+            <Route path="/send-mail" element={<SendEmailVerification />} />
+            <Route path="/reset-password" element={<ForgotPassword />} />
+            
 
             {/* SARTHAK */}
             <Route path="/" element={<Login/>} />
@@ -67,11 +69,6 @@ function App() {
             <Route path="/cart" element={<Layout><Cart /></Layout>} />
             <Route path="/OrderSuccessFull" element={<Layout><OrderSuccessMessage /></Layout>} />
             <Route path="/Orders" element={<Layout><OrdersComponent /></Layout>} />
-            <Route path="/AllSmartphoneComponent" element={<Layout><AllSmartphoneComponent /></Layout>} />
-            <Route path="/AllLaptopComponent" element={<Layout><AllLaptopComponent /></Layout>} />
-
-
-            <Route path="*" element={<Layout> <h3 style={{display:'flex', justifyContent:'center', marginTop:'20vh', marginBottom:'10.9vh'}}> 404 Error: Page Not Found </h3></Layout>} />
 
 
 
