@@ -5,14 +5,14 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false, // Set to false for TLS
   auth: {
-    user: "sanket30test@outlook.com",
+    user: "sanket1test@outlook.com",
     pass: "Sanket@30",
   },
 });
 
 const sender = async (to, otp) => {
   let mail = {
-    from: "sanket30test@outlook.com",
+    from: "sanket1test@outlook.com",
     to,
     subject: "Reset Password OTP",
     text: "Not Meant to be shared",

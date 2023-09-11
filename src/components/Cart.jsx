@@ -213,7 +213,7 @@ const Cart = () => {
         ) : (
           <div>
             <p>Your cart is empty.</p>
-            <button  onClick={()=>navigate("/cart")} className="button-5">My Orders</button>
+            <button  onClick={()=>navigate("/Orders")} className="button-5">My Orders</button>
           </div>
         )}
       </div>

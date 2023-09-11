@@ -25,6 +25,8 @@ import ForgotPassword from "./components/forgot-password/forgot-password";
 import Homepage from "./components/Homepage";
 import Cart from "./components/Cart";
 import OrdersComponent from "./components/OrderComponent";
+import AllSmartphoneComponent from "./components/AllSmartphoneComponent";
+import AllLaptopComponent from "./components/AllLaptopComponent";
 
 
 
@@ -69,6 +71,8 @@ function App() {
             <Route path="/cart" element={<Layout><Cart /></Layout>} />
             <Route path="/OrderSuccessFull" element={<Layout><OrderSuccessMessage /></Layout>} />
             <Route path="/Orders" element={<Layout><OrdersComponent /></Layout>} />
+            <Route path="/AllSmartphoneComponent" element={<Layout><AllSmartphoneComponent /></Layout>} />
+            <Route path="/AllLaptopComponent" element={<Layout><AllLaptopComponent /></Layout>} />
 
 
 
