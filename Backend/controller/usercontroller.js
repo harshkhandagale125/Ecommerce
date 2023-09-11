@@ -112,8 +112,8 @@ const deleteUser = async (req, res) => {
 };
 
 const logout = async (req, res) => {
-  response.clearCookie("jwtt");
-  response.send("Logged out");
+  res.clearCookie("jwtt");
+  res.send("Logged out");
 };
 
 const sendEmailForVerification = async (req, res) => {
