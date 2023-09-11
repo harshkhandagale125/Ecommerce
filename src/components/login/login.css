@@ -7,7 +7,7 @@
   opacity: 1;
 }
 
-.button {
+.login-button {
   background: #ff4f04;
   border: 1px solid #ff4f04;
   display: flex;
@@ -22,3 +22,25 @@
   outline: none;
   cursor: pointer;
 }
+
+a.text-dark-50.fw-bold {
+  color: #FF4F04; 
+}
+
+h4.fw-bold.mb-2 {
+  font: normal normal 600 20px/27px Segoe UI; 
+  text-align: left;
+  letter-spacing: 0px;
+  color: #302F2F;
+  opacity: 1;
+}
+
+.input_email,
+.form-control.form-control-lg {
+  background: #FF4F0433 0% 0% no-repeat padding-box;
+  border: 1px solid #FF4F04;
+  opacity: 1;
+}
+
+
+

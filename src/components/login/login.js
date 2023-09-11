@@ -20,13 +20,32 @@ function Login() {
       localStorage.setItem("token",token)
       axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 
-      navigate("/Homepage");
-    } catch (error) {
-      alert("Login failed");
-      console.log("Login failed:", error);
-    }
-  };
 
+  const tokenPayload = parseJwt(token); 
+  const userRole = tokenPayload.role;
+
+
+  if (userRole === 'admin') {
+    navigate("/Homepage");
+  } else {
+    navigate("/Homepage"); 
+  }
+} catch (error) {
+  alert("Login failed");
+  console.log("Login failed:", error);
+}
+};
+
+function parseJwt(token) {
+  const base64Url = token.split('.')[1];
+  const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+  const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+  }).join(''));
+
+  return JSON.parse(jsonPayload);
+};
+  
   return (
     <div class="Image1">
 
@@ -62,14 +81,16 @@ function Login() {
                           class="form-control form-control-lg"
                         />
                     </div>
-                    <label>
-                        <input type="checkbox"/>
-                        Remember me
-                      </label>                   
-                    <div class="button" onClick={handleLogin}>
+                                     
+                    <div class="login-button" onClick={handleLogin}>
                         Continue
                     </div>          
-                  </div>                
+                  </div> 
+                  <div>
+                    <p class="mb-0"><a href="/send-mail" class="text-dark-50 fw-bold">Forgot password</a>
+                    </p>
+                  </div>
+                     
                   <div>
                     <p class="mb-0">Don't have an account? <a href="/register" class="text-dark-50 fw-bold">Create An Account</a>
                     </p>

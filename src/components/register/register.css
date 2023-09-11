@@ -1,15 +1,24 @@
- .Image{
+.Image{
     background: transparent url('Group 20642.png') 0% 0% no-repeat padding-box;
     background-size: cover;
     background-position: center;
     width: 100vw;
-    height: 900px;
+    height: 100vh;
     opacity: 1;
     
 }
+.card-body{
+    padding:20px 40px;
+
+}
+.card{
+    border-radius: 16px;
+    width: 400px;
+    margin-left: 40px;
+}
 
 
-.button {
+.register-button {
     background: #ff4f04;
     border: 1px solid #ff4f04;
     display: flex;
@@ -24,3 +33,15 @@
     outline: none;
     cursor: pointer;
 }
+.mybody{
+    overflow: hidden;
+}
+
+.input-style {
+    background: #FF4F0433;
+    border: 1px solid #FF4F04;
+    border-radius: 8px;
+    opacity: 1;
+
+  }
+  
