@@ -40,7 +40,16 @@ const Carousel = () => {
     slides = document.getElementsByClassName('mySlides');
     dots = document.getElementsByClassName('dot');
     slider(slideIndex);
+
+    // Automatically move to the next slide every 3 seconds (adjust the interval as needed)
+    const intervalId = setInterval(() => {
+      plusSlides(1);
+    }, 3000);
+
+    // Clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
   }, [slideIndex]);
+
 
   return (
     <div>
@@ -69,6 +78,7 @@ const Carousel = () => {
              <h6 style={{ width: '555px'}}>A transformative triple‑camera system that adds tons of capability without complexity</h6>
              </div>
         </div>
+
         <div className='Navdots' style={{ textAlign: 'center' }}>
         <span className="dot" onClick={() => currentSlide(1)}></span>
         <span className="dot" onClick={() => currentSlide(2)}></span>
